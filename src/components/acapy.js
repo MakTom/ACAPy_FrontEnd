@@ -3,18 +3,19 @@ import axios from 'axios';
 const Acapy = () => {
 
   const [connections, setconnections] = useState([]);
+  useEffect(() => {
+    //Update with your ACAPY_Controller IP address
+    axios.get(`http://34.201.33.137:3000/topic/connections`)
+    .then(res => {
+        const conns = res.data.results;
+        setconnections(conns);
+        console.log(connections);
+    }).catch(error => {
+        console.error(error);
+    });
+  });
 
-  useEffect(() =>{
-      //Update with your ACAPY_Controller IP address
-      axios.get(`http://34.201.33.137:3000/topic/connections`)
-      .then(res => {
-          const conns = res.data.results;
-          setconnections(conns);
-          console.log(connections);
-      }).catch(error => {
-          console.error(error);
-      });
-  },[connections]); 
+
 
   return ( 
 <div></div>
