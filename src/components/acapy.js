@@ -13,7 +13,7 @@ const Acapy = () => {
     }).catch(error => {
         console.error(error);
     });
-  });
+  }, []);
 
 
 
