@@ -17,7 +17,7 @@ const Acapy = () => {
         });   
     }, []);
 
-    acceptrequest(connection_id) {
+    const acceptrequest = (connection_id) =>{
         axios.post('http://34.201.33.137:3000/control/acceptrequest', {"connection_id": connection_id})
           .then(res => {
             const connections = res.data.results;
