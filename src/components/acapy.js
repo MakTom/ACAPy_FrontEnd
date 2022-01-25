@@ -1,27 +1,31 @@
-import React, {useState, useEffect} from "react";
+import React from 'react';
 import axios from 'axios';
 
-const Acapy = () => {
+export default class Acapy extends React.Component {
+  state = {
+    connections: []
+  }
 
-    const [connections, setconnections] = useState([]);
+  componentDidMount() {
+    axios.get(`http://44.202.32.75:3000/topic/connections`)
+      .then(res => {
+        const connections = res.data.results;
+        this.setState({ connections });
+      }).catch(error => {
+        console.error(error);
+      });
+  }
 
-    useEffect(() =>{
-        //Update with your ACAPY_Controller IP address
-        axios.get(`http://34.201.33.137:3000/topic/connections`)
-        .then(res => {
-            const conns = res.data.results;
-            setconnections(conns);
-            console.log(connections);
-        }).catch(error => {
-            console.error(error);
-        });
-    }, []); 
-
-    return ( 
-       <div>
-           
-       </div>    
-    );
+  render() {
+    return (
+      <ul>
+        {
+          this.state.connections
+            .map(connection =>
+              <li key={connection.connection_id}>{`id: ${connection.connection_id}, rfc23_state: ${connection.rfc23_state}`}</li>
+            )
+        }
+      </ul>
+    )
+  }
 }
-
-export default Acapy;
