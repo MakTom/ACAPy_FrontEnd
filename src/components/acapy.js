@@ -37,7 +37,7 @@ const Acapy = () => {
                     {` State: ${connection.rfc23_state}`}
 
                     {
-                        connection.rfc23_state==="request-received" && <button>Accept</button>
+                        connection.rfc23_state==="request-received" && <button onClick={acceptrequest(connection.connection_id)}>Accept</button>
                     }
                 </li>
                 ))
