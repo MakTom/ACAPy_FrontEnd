@@ -7,7 +7,7 @@ export default class Acapy extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://44.202.32.75:3000/connections`)
+    axios.get(`http://34.201.33.137:3000/connections`)
       .then(res => {
         const connections = res.data.results;
         this.setState({ connections });
