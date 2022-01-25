@@ -11,6 +11,7 @@ export default class Acapy extends React.Component {
       .then(res => {
         const connections = res.data.results;
         this.setState({ connections });
+        console.log(connections);
       }).catch(error => {
         console.error(error);
       });
