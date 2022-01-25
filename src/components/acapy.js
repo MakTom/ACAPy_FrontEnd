@@ -34,8 +34,11 @@ const Acapy = () => {
             {connections.map(connection => (
                 <li key={connection.connection_id}>
                     {`ID: ${connection.connection_id}`}
-                    {`State: ${connection.rfc23_state}`}
-                    {connection.rfc23_state==="request-received"? <button onClick={() => this.acceptrequest(connection.connection_id)}>Accept</button>}
+                    {` State: ${connection.rfc23_state}`}
+
+                    {
+                        connection.rfc23_state==="request-received" && <button>Accept</button>
+                    }
                 </li>
                 ))
             }
