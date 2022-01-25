@@ -19,14 +19,7 @@ export default class Acapy extends React.Component {
 
   render() {
     return (
-      <ul>
-        {
-          this.state.connections
-            .map(connection =>
-              <li key={connection.connection_id}>{`id: ${connection.connection_id}, rfc23_state: ${connection.rfc23_state}`}</li>
-            )
-        }
-      </ul>
+      <div></div>
     )
   }
 }
