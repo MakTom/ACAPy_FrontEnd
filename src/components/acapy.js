@@ -14,7 +14,7 @@ const Acapy = () => {
       }).catch(error => {
           console.error(error);
       });
-  },); 
+  },[connections]); 
 
   return ( 
 <div></div>
