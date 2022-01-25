@@ -5,7 +5,7 @@ const Acapy = () => {
   const [connections, setconnections] = useState([]);
   useEffect(() => {
       //Update with your ACAPY_Controller IP address
-      await axios.get(`http://34.201.33.137:3000/topic/connections`)
+        axios.get(`http://34.201.33.137:3000/topic/connections`)
         .then(res => {
             const conns = res.data.results;
             console.log("Cons: "+conns);
