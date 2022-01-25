@@ -3,6 +3,7 @@ import axios from 'axios';
 const Acapy = () => {
 
   const [connections, setconnections] = useState([]);
+  const [isloading,setisloading] = useState(true);
   useEffect(() => {
       //Update with your ACAPY_Controller IP address
         axios.get(`http://34.201.33.137:3000/topic/connections`)
@@ -18,9 +19,13 @@ const Acapy = () => {
     }, []);
 
   return ( 
-<div>
-    {connections}
-</div>
+        <div>
+        { isloading && <div>..Loading...</div>}
+    {
+        connections
+    }
+   
+        </div>
   );
 }
 
