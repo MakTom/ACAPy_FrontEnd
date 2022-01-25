@@ -21,13 +21,12 @@ const Acapy = () => {
   return ( 
         <div>
         { isloading && <div>..Loading...</div>}
-    {
-        {connections}
-            .map(connection =>
+    
+        {connections.map(connection => (
               <li key={connection.connection_id}>{`id: ${connection.connection_id}, rfc23_state: ${connection.rfc23_state}`}</li>
-            )
-        
-    }
+            ))
+        }
+    
    
         </div>
   );
