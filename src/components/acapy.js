@@ -18,8 +18,8 @@ const Acapy = () => {
     }, []);
 
     const acceptrequest = (connection_id) =>{
-        restEndpoint = 'http://20.120.87.99:8080';
-        restURL = restEndpoint + '/connections/' + connection_id + '/accept-request?my_endpoint=' + encodeURI(restEndpoint);
+        const restEndpoint = 'http://20.120.87.99:8080';
+        const restURL = restEndpoint + '/connections/' + connection_id + '/accept-request?my_endpoint=' + encodeURI(restEndpoint);
 
         axios.post(restURL)
           .then(res => {
