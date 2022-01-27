@@ -31,7 +31,7 @@
         Click on Try it out
         Remove the patameters inside the body tag
         Click Execute.
-        Go to Server Response adn copy the invitation link. 
+        Go to Server Response and copy the invitation link. 
 
     Open BPA UI 
         Click on 'Secure Connections'
