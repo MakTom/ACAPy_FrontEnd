@@ -23,7 +23,8 @@
             npm start
         ⦁	Navigate to IP Address:3000 to visit the react UI.
 
-How to test the whole system. 
+    How to test the whole system?
+
     Make sure to have BPA, ACA-Py, ACA-Py controller and the front end are up.
     Visit the Swagger UI
         Scroll down and click at 'POST /connections/create-invitation'
