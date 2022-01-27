@@ -22,7 +22,7 @@ const Acapy = () => {
         axios.post(`http://34.201.33.137:3000/topic/acceptrequest`, {"connection_id": connection_id})
         .then(res => {
           const connections = res.data.results;
-          console.log(connections);
+          window.location.reload(false);
         })
         .catch(error => {
           console.error(error);
