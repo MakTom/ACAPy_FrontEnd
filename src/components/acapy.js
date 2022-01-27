@@ -1,10 +1,10 @@
 import React,{useState, useEffect} from 'react';
 import axios from 'axios';
-const Acapy = () => {
 
-  const [connections, setconnections] = useState([]);
-  const [isloading,setisloading] = useState(true);
-  useEffect(() => {
+const Acapy = () => {
+    const [connections, setconnections] = useState([]);
+    const [isloading,setisloading] = useState(true);
+    useEffect(() => {
       //Update with your ACAPY_Controller IP address
         axios.get(`http://34.201.33.137:3000/topic/connections`)
         .then(res => {
@@ -18,18 +18,15 @@ const Acapy = () => {
     }, []);
 
     const acceptrequest = (connection_id) =>{
-        //
-        const restEndpoint = 'http://52.188.211.100:8080';
-        const restURL = restEndpoint + '/connections/' + connection_id + '/accept-request?my_endpoint=' + encodeURI(restEndpoint);
-        console.log(restURL);
-        axios.post(restURL)
-          .then(res => {
-            const connections = res.data.results;
-            console.log(connections);
-          })
-          .catch(error => {
-            console.error(error);
-          })
+        //Update with your ACAPY_Controller IP address
+        axios.post(`http://34.201.33.137:3000/topic/connections/acceptrequest`, {"connection_id": connection_id})
+        .then(res => {
+          const connections = res.data.results;
+          console.log(connections);
+        })
+        .catch(error => {
+          console.error(error);
+        })
       }
 
   return ( 
