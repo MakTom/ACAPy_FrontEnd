@@ -6,7 +6,7 @@ const Acapy = () => {
     const [isloading,setisloading] = useState(true);
     useEffect(() => {
       //Update with your ACAPY_Controller IP address
-        axios.get(`http://34.201.33.137:3000/topic/connections`)
+        axios.get(`http://34.201.33.137:3000/connections`)
         .then(res => {
             const conns = res.data.results;
             setconnections(conns);
