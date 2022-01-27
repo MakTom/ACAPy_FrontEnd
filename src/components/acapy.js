@@ -21,7 +21,7 @@ const Acapy = () => {
         //
         const restEndpoint = 'http://52.188.211.100:8080';
         const restURL = restEndpoint + '/connections/' + connection_id + '/accept-request?my_endpoint=' + encodeURI(restEndpoint);
-
+        console.log(restURL);
         axios.post(restURL)
           .then(res => {
             const connections = res.data.results;
